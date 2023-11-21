@@ -1,0 +1,338 @@
+
+\AnypointStudio\plugins\org.mule.tooling.server.4.4.0.ee_7.11.0.202209261407\mule\lib\opt\spring-context-5.3.21
+
+"a": java!com::eon::Cron::getNextValidTime(payload.schedulerInterval,payload.lastExecutionTimestamp)
+
+[{"schedulerName": "osentry1",
+"schedulerEnabled": true,
+"schedulerInterval": "0 0/30 * * * ?",
+"targetPath": "/osentry1",
+"targetAPI": "892cab23-e878-4392-9cbc-0a36e529eb7f.mock.pstmn.io",
+"qParams": "names",
+"headers": "amazing",
+"nextExecutionTimestamp": "2022-07-04T21:00:00",
+"lastExecutionTimestamp": "2023-05-22T16:00:15"} ,
+
+{"schedulerName": "osentry2",
+"schedulerEnabled": true,
+"schedulerInterval": "0 0/30 * * * ?",
+"targetPath": "/osentry2",
+"targetAPI": "892cab23-e878-4392-9cbc-0a36e529eb7f.mock.pstmn.io",
+"qParams": "names",
+"headers": "amazing",
+"nextExecutionTimestamp": "2022-07-04T21:00:00",
+"lastExecutionTimestamp": "2023-05-22T16:00:15"}]
+
+
+
+
+[{"schedulerName": "osentry1",
+"schedulerEnabled": false,
+"schedulerInterval": "0 0/30 * * * ?",
+"targetPath": "/osentry1",
+"targetAPI": "892cab23-e878-4392-9cbc-0a36e529eb7f.mock.pstmn.io",
+"qParams": "brains",
+"headers": "entries",
+"lastExecutionTimestamp": null,
+"nextExecutionTimestamp": null },
+
+{"schedulerName": "osentry2",
+"schedulerEnabled": true,
+"schedulerInterval": "0 0/30 * * * ?",
+"targetPath": "/osentry2",
+"targetAPI": "892cab23-e878-4392-9cbc-0a36e529eb7f.mock.pstmn.io",
+"qParams": "entry",
+"headers": "blaze",
+"lastExecutionTimestamp": "2022-12-05T13:22:22",
+"nextExecutionTimestamp": "2022-12-05T13:30:00"}]
+
+
+output application/json
+---
+{(payload map ((item, index) -> {
+  (item.'key'): item.value
+}))}
+
+
+readUrl("classpath://implementationGettest/mock_payload_all.dwl","application/dw")
+
+
+In the On Complete phase, none of these variables (not even the original ones) are visible. Only the final result is available in this phase. Moreover, since the Batch Job Instance executes asynchronously from the rest of the flow, no variable set in either a Batch Step or the On Complete phase will be visible outside the Batch Scope.
+
+
+
+The key differences in selecting how to house all the data in an organization comes down to these considerations:
+
+Batch processing is when the processing and analysis happens on a set of data that have already been stored over a period of time. An example is payroll and billing systems that have to be processed weekly or monthly.
+Streaming data processing happens as the data flows through a system. This results in analysis and reporting of events as it happens. An example would be fraud detection or intrusion detection. Streaming data processing means that the data will be analyzed and that actions will be taken on the data within a short period of time or near real-time, as best as it can.
+Real-time data processing guarantees that the real-time data will be acted on within a period of time, like milliseconds. An example would be for-real time application that purchases a stock within 20ms of receiving a desired price.
+
+
+
+
+Question 1: Refer to the exhibits. A web client submits a request to http://localhost:8081/flights.
+
+ What is the result at the end of the flow?⁠  
+
+A: "Object"
+B: "Java"
+C: "XML"
+D: "String"
+
+
+Refer to the exhibits. The main flow contains an HTTP Request. The HTTP Listeners and HTTP Request use default configurations.
+
+A web client sends a GET request to the main flow's HTTP Listener that includes a modelName Query parameter.
+
+What value(s) are accesible in the child flow?
+
+A The payload The planeModel var
+B The payload
+C The payload The modelName query param
+D The payload The modelName query param The planeModel var   
+
+Refer to the exhibits. In this Mule application files are written from inside a For Each scope. What is written to the file system when the flow executes , and what payload is returned in the response to the web client?
+
+Refer to the exhibits. The <when> expression for the Choice router needs to be written. What is a valid <when> expression to route Mule events to the non-default flow?
+
+Refer to the exhibits. In the payload of a POST request to this Mule application , a web client sends a new order record {"oid":"100", "custId": "annie@acme.com" , "status":"NEW ORDER"}. In this Mule application , what value must be used in the Input Parameters field of the Database Insert operation to properly pass the order record values to the SQL statement?
+
+Refer to the exhibits. When the flow executes , the now() function in the Transform Message component returns "2021-08-26T 13:32:10 . 64-07:00 ". What is written to the records.csv file when the flow executes?
+
+Refer to the exhibits. The Set Payload transformer in the For Each scope and the Set Payload transformer in the Batch Job scope's Batch Step each contain a DataWeave expression to sleep (pause processing ) for the number of milliseconds in the current payload. The Batch Job scope's block size is set to 1. In what order are the payloads logged in the For Each scope and in the Batch Step Scope?
+
+Refer to the exhibits. The /daily folder exits , is currently empty , and flies can be read and written to this folder by Anypoint Studio. This Mule application is run in Anypoint Studio , and then a file named productUpdates.txt containing the text "START" is written to the /daily folder. What is the /daily folder after the readUpdates flow completes for the first time?
+
+A web client sends a request to http://localhost:8081?dept=sales.
+What is the correct DataWeave expression to access the value of dept?
+A. attributes.queryParams.dept
+B. attributes.dept
+C. message.queryParams.dept
+D. vars.dept          
+
+
+Anypoint MQ FIFO queues are limited to how many in flight messages per queue?
+A. 120000
+B. 10
+C. 100
+D. 1000
+
+
+What is a core characteristic of the Modern API?
+A. API is rapidly prototyped following AGILE methodology.
+B. API follows the RESTful architecture.
+C. API is designed first using an API specification for rapid feedback.
+D. API has a mechanism to accept feedback and suggestions for improvement.
+
+
+What execution model is used by For Each and Batch Job scopes?
+A. Both are multi-threaded
+B. Both are single-threaded
+C. Batch Job is single-threaded and For Each is multi-threaded
+D. For each is single-threaded and Batch Job is multi-threaded
+
+
+What is the face of CloudHub and integrates with Platform Services?
+A. None of these
+B. Runtime Manager Console
+C. Integration Apps
+D. CloudHub Workers
+
+
+How does Runtime Manager Console connect with App Data and Logs of a Mule app?
+A. None of these
+B. Integration Apps
+C. CloudHub Workers
+D. Rest API
+
+Does a root element need when creating a response using Dataweave?
+A. None of these
+B. Sometimes
+C. Never
+D. Always
+
+
+What are the features of CloudHub Fabric?
+A. Non-persistent queue
+B. Horizontal Scaling
+C. VPN Mock Services
+D. None of these
+
+
+What does the Mule runtime use to enforce policies and limit access to APIs?
+A. API Manager
+B. The proxy created by API Manager
+C. The Mule runtime’s embedded API Gateway
+D. Anypoint Access Control
+
+
+Why would you use SOAP instead of http?
+A. If the architecture mandates.
+B. It is up to the integration specialist.
+C. Successful/retry logic for reliable messaging functionality.
+D. It is part of agile methodology.
+
+
+What is the purpose of API autodiscovery?
+A. Enables API Manager to discover the published API on Anypoint Exchange.
+B. Allows a deployed Mule application to connect with API Manager to download policies and act as its own API proxy.
+C. Enables an API to be directly managed in API Manager.
+D. Allows the Mule application to be automatically discovered on Anypoint Exchange.
+
+
+What is the use of API Notebooks?
+A. None of these
+B. Test Policies
+C. Test API functions
+D. Test RAML
+
+What is the use of DevKit in Mule 4?
+A. Facilitates communication between third-party systems and Mule applications.
+B. No use.
+C. Offers connector end user support in a few aspects of Mule app design.
+D. Enables the development of Anypoint Connectors.
+
+
+How is policy defined in terms of classloader of an API?
+A. Classloader isolation does not exist between the application, the runtime and connectors, and policies.
+B. Classloader isolation exists between the application, the runtime and connectors, and policies.
+C. None of these.
+D. Classloader isolation partially exists between the application, the runtime and connectors, and policies.
+
+
+How would you debug Mule applications?
+
+A. Using breakpoints
+B. Checking RAML
+C. By Deploying apps on production
+D. Cannot do it
+
+
+	
+What does an API proxy application NOT do?
+
+	A	
+Apply runtime policies to enforce governance
+
+	B	
+Determine which response Mule event is allowed to pass through to the API backend service
+
+	C	
+Meter the traffic flowing through the proxy
+
+	D	
+Determine which request Mule event is allowed to pass through to the API backend service
+
+
+	
+A Database connector is configured to select rows from a MySQL database. 
+
+What is the format of the array of results returned from the database query?
+
+	A	
+XML
+
+	B	
+CSV
+
+	C	
+Java
+
+	D	
+JSON
+
+
+
+	
+Why must a Mule application's deployable archive package all its dependencies in order to be deployed to CloudHub?
+
+	A	
+CloudHub workers CANNOT download ALL possible project dependencies a project may contain
+
+	B	
+The online logging service requires access to ALL project dependencies to log the appropriate Java classes used in the Mule application
+
+	C	
+CloudHub workers needs to compare the current dependencies with the LATEST project dependencies from the MuleSoft repository
+
+	D	
+MuleSoft support requires access to ALL project dependencies for future online troubleshooting
+
+
+{(payload[0].name): (payload[0].id)} ++ { (payload[1].name): (payload[1].id)} ++ { (payload[2].name): (payload[2].id)} ++ { (payload[3].name): (payload[3].id)}
+
+payload map ((item, index) -> item ++ {
+    day : weekdays[((item.datetime as LocalDateTime).dayOfWeek) - 1]}) filter ($.organizer == "Ross")
+
+http://localhost:8161/admin/queues.jsp
+
+output application/json
+import * from dw::core::Arrays
+---
+payload pluck ((v, k) -> {
+    (k): v
+}) map ((item, index) -> item...*wbs orderBy ($.HierarchyPathID) distinctBy ($.ProjectID)) 
+reduce ((item, accumulator) -> item) splitAt 1
+
+%dw 2.0
+output application/json
+import * from dw::core::Arrays
+---
+payload pluck ((v, k) -> {
+    (k): v
+}) map ((item, index) -> item...*wbs orderBy ($.HierarchyPathID) groupBy($.ProjectID)) 
+reduce ((item, arr=[]) -> [item])
+
+
+payload pluck ((v, k) -> {
+    (k): v
+}) map ((item, index) -> item...*wbs orderBy ($.HierarchyPathID)) 
+reduce ((item, accumulator) -> item) - Best version
+
+payload filter ($.ASInterface == "true") splitWhere ($.ProjectID == "PROJECT-K103244") pluck $ - for split
+
+payload..*ProjectID distinctBy $ - show how many projects are
+
+
+Description: This is a single APP which will be used by a single organization to maintain all scheduler executions for all APIs and other endpoints outside of MuleSoft in a single location and trigger these based on the ObjectStore entry which contains all the required information for the HTTP call.
+
+ 
+
+Requirements:
+
+Part 1:
+
+RAML validation
+
+Ability to: view all/view one/add/delete/update Object Store scheduler entry
+
+Part 2:
+
+Have a single scheduler running every 30 seconds to check Object Store and execute any cron expressions which need to run
+
+Have ability to run a particular scheduler ad-hoc without waiting at the next execution time
+
+Scheduler enabled/disabled check
+
+Dynamic HTTP connector property pickup from OS scheduler entry 
+
+Part 3:
+
+Error handling
+
+Logging
+
+MUnits to test functionality both positive and negative
+
+Postman collection
+
+Postman Mock Server
+
+
+
+
+https://www.youtube.com/watch?v=wSBJRhmk-sU&ab_channel=JasonEstevan
+https://developer.mulesoft.com/tutorials-and-howtos
+https://blogs.mulesoft.com/dev-guides/how-to-tutorials/mule4-error-handling/
+https://raml.org/
+https://dataweave.mulesoft.com/learn/

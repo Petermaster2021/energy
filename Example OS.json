@@ -1,0 +1,28 @@
+{"schedulerName": "osentry1",
+"schedulerEnabled": true,
+"schedulerInterval": "0 0/30 * * * ?",
+"targetPath": "/osentry1",
+"targetAPI": "892cab23-e878-4392-9cbc-0a36e529eb7f.mock.pstmn.io",
+"qParams": [{ 
+    "key": "names",
+    "value": "contracts"
+    }],
+"headers":[{ 
+    "key": "entries",
+    "value": "transactions"
+}]} 
+
+
+{"schedulerName": "osentry2",
+"schedulerEnabled": false,
+"schedulerInterval": "0 0/15 * * * ?",
+"targetPath": "/osentry2",
+"targetAPI": "892cab23-e878-4392-9cbc-0a36e529eb7f.mock.pstmn.io",
+"qParams": [{ 
+    "key": "files",
+    "value": "emblems"
+    }],
+"headers":[{ 
+    "key": "logs",
+    "value": "folders"
+}]} 
